@@ -3,7 +3,7 @@
 This ARM template enables you to quickly create and roll out a build server with VS 2017 and additional installs needed for the build server.
 
 What the scripts does:
-1) Start off with creating a storage account and a blob container for files and scripts that are needed to create the build server with VM custom script extensions (CreatePrepareBlob-Build-Server.ps1)
+1. Start off with creating a storage account and a blob container for files and scripts that are needed to create the build server with VM custom script extensions (CreatePrepareBlob-Build-Server.ps1)
 - The script creates the storage account and then it will create the blob container
 - The script uploads a zip file (installs.zip) with all installables (customizeable of course) to the blob container
 - The script will also upload some powershell modules that will be fired during the custom script extensions stage of the VM creation.
@@ -15,7 +15,7 @@ Also the "scripts" folder in the root should contain an "Installs.zip" file with
 The Powershell will return the storage account key, which is needed as a parameter in step 2 (creation of the Build Server VM) 
 
 
-2) After files are uploaded the Build-Server-deploy.ps1 can be used to create the build server.
+2. After files are uploaded the Build-Server-deploy.ps1 can be used to create the build server.
 - Create the VM that contains Visual Studio 2017 and the VSTS build agents and configure all VM properties.
 - Create and mount a 1 TB data disk (F drive). This drive will be used for the VSTS builds, releases, agent directories, etc.
 - Download the Installs.zip file (containng all installers for build server) from the Blob to the local VM and extract its contents.       Currently the InstallAdditionalExecutables.ps1 will install:
@@ -26,6 +26,7 @@ The Powershell will return the storage account key, which is needed as a paramet
 	- Microsoft Azure DataLake Tools VisualStudio Extension
 	- Azure Functions And WebJob Tools
 	- .NET Core 2.1.300
+  
   You can add installers or remove any of the above list by editing the InstallAdditionalExecutables.ps1 and including/excluding them     from the zip file.
 - The script will try to update Visual Studio 2017 and then apply the license key to VS 2017 to activate it.
 - It will then continue to download the VSTS agent package and extract + install it to the F drive and bring the agents online based on the VSTS settings provided.
