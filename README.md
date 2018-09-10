@@ -2,7 +2,7 @@
 
 This ARM template enables you to quickly create and roll out a build server with VS 2017 and additional installs needed for the build server.
 
-What the scripts do is:
+What the scripts does:
 1) Start off with creating a storage account and a blob container for files and scripts that are needed to create the build server with VM custom script extensions (CreatePrepareBlob-Build-Server.ps1)
 - The script creates the storage account and then it will create the blob container
 - The script uploads a zip file (installs.zip) with all installables (customizeable of course) to the blob container
