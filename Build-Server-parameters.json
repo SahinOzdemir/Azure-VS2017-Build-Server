@@ -1,0 +1,108 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "[REGION OF THE BUILD SERVER]"
+        },
+        "AzureResGroup": {
+            "value": "[NAME OF RESOURCEGROUP THIS BUILD SERVER WILL BE DEPLOYED TO]"
+        },
+        "virtualMachineName": {
+            "value": "[BUILD SERVER VIRTUAL MACHINE NAME]"
+        },
+        "virtualMachineDataDiskName": {
+            "value": "[NAME OF BUILD SERVER DATA DISK]"
+        },
+        "virtualMachineOSDiskName": {
+            "value": "[NAME OF BUILD SERVER OS DISK]"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B2s"
+        },
+        "virtualMachinePublicIPDnsPrefix": {
+            "value": "[PUBLIC IP DNS PREFIX]"
+        },
+        "adminUsername": {
+            "value": "[NAME OF ADMIN ACCOUNT ON THE BUILD SERVER]"
+        },
+        "adminPassword": {
+            "value": "[PASSWORD FOR THE ADMIN ACCOUNT ON THE BUILD SERVER]"
+        },
+        "virtualNetworkName": {
+            "value": "[NAME OF VNET OF THIS BUILD SERVER]"
+        },
+        "networkInterfaceName": {
+            "value": "[NAME OF NETWORK INTERFACE FOR BUILD SERVER]"
+        },
+        "networkSecurityGroupName": {
+            "value": "[NAME OF SECURITY GROUP FOR BUILD SERVER]"
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "[NAME FOR THE DIAGNOSTICS STORAGE FOR BUILD SERVER]"
+        },
+        "diagnosticsStorageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "Microsoft.Storage/storageAccounts/[NAME OF diagnosticsStorageAccountName PARAM VALUE]"
+        },
+        "addressPrefix": {
+            "value": "[BUILD SERVER IP ADDRESS PREFIX E.G 10.0.0.0/24]"
+        },
+        "subnetName": {
+            "value": "[BUILD SERVER SUBNET NAME]"
+        },
+        "subnetPrefix": {
+            "value": "[BUILD SERVER SUBNET PREFIX E.G 10.0.0.0/24]"
+        },
+        "publicIpAddressName": {
+            "value": "[BUILD SERVER IP ADRESS NAME]"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "vstsAccount": {
+            "value": "[VSTS ACCOUNT E.G. -> xxxx.visualstudio.com minus the visualstudio.com]"
+        },
+        "vstsPersonalAccessToken": {
+        "value": "[PAT TOKEN GENERATED IN VSTS]"
+        },
+        "vstsServiceAccount": {
+        "value": "[BUILD AGENT SERVICE ACCOUNT - IF NOT USING NETWORK SVC]"
+        },
+        "vstsServiceAccountPassword": {
+        "value": "[BUILD AGENT SERVICE ACCOUNT PASSWORD]"
+        },
+        "vstsAgentName": {
+        "value": "[BUILD AGENT NAME]"
+        },
+        "vstsNumberOfAgents": {
+        "value": "4"
+        },
+        "vstsPoolName": {
+        "value": "[VSTS AGENT BUILD POOL]"
+        },
+        "vstsEnableAutologon": {
+        "value": "[ENABLE AUTO LOGON FOR VSTS - true/false]"
+        },
+        "_artifactsLocation": {
+        "value": "[THIS ARM TEMPLATE USES A SCRIPT LOCATION ON A STORAGE ACCOUNT WITH BLOB CONTAINER IN ORDER TO DOWNLOAD ALL INSTALLABLES             AND SCRIPTS THAT NEED TO BE EXECUTED ON THE VM. E.G. https://STORAGEACCOUNT.blob.core.windows.net/CONTAINERNAME/]"
+        },
+        "storageAccountName": {
+        "value": "[NAME OF THE STORAGE ACCOUNT]"
+        },
+        "storageAccountKey": {
+        "value": "[ACCESS KEY FOR STORAGE ACCOUNT]"
+        },
+        "storageAccountContainerName": {
+            "value": "[CONTAINERNAME]"
+        },
+        "visualStudioLicenseKey": {
+            "value": "[VALID VISUAL STUDIO LICENSE KEY]"
+        }
+    }
+}
